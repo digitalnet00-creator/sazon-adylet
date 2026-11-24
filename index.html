@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
+<title>El Sazón de ADYLET</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Salsas artesanales de la Chef Ady, hechas a mano en Guadalajara. Caja de 3 salsas por $180. Pedidos por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Barlow:wght@400;500;700&family=Pinyon+Script&display=swap">
+<style>
+/* Layout: caja kraft abierta — foto real arriba, luego tres frascos en fila, proceso en 5 recuadros, pedidos al final */
+:root{
+  --kraft:#e9dcc3; --papel:#f7f0e2; --tinta:#3e2418; --oxido:#9a3324; --vino:#8e2f22; --linea:#cdb894; --suave:#6d5442;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --script:"Pinyon Script","Snell Roundhand",cursive;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--kraft:#2a1d16;--papel:#1f1510;--tinta:#f1e3c8;--oxido:#e07a5f;--vino:#d9785e;--linea:#4d3a2c;--suave:#c9b49a;color-scheme:dark}}
+:root[data-theme="dark"]{--kraft:#2a1d16;--papel:#1f1510;--tinta:#f1e3c8;--oxido:#e07a5f;--vino:#d9785e;--linea:#4d3a2c;--suave:#c9b49a;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.1;text-wrap:balance;margin:0}
+.kicker{font-family:var(--sans);font-weight:700;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oxido)}
+.script{font-family:var(--script);color:var(--oxido);font-weight:400}
+.borrador{background:var(--tinta);color:var(--papel);text-align:center;font-size:.85rem;padding-block:.5rem}
+.borrador .wrap{padding-block:0}
+header.hero{background:var(--kraft)}
+.hero-media{position:relative;width:100%;aspect-ratio:16/9;max-height:78vh;overflow:hidden;background:var(--tinta)}
+.hero-media video{width:100%;height:100%;object-fit:cover;display:block}
+.hero-velo{position:absolute;inset:0;background:linear-gradient(to top,color-mix(in srgb,var(--tinta) 55%,transparent),transparent 45%);pointer-events:none}
+.hero-texto{padding-block:2rem 2.75rem}
+.hero-texto .wrap{display:grid;justify-items:start}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);color:var(--oxido)}
+.hero h1 small{display:block;font-size:.42em;color:var(--tinta);font-weight:500;letter-spacing:.04em}
+.hero .script{font-size:2.4rem;display:block;margin-top:.4rem}
+.hero p{max-width:44ch;margin:1rem 0 1.5rem}
+.precio{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.precio b{font-family:var(--serif);font-size:3rem;color:var(--tinta);font-variant-numeric:tabular-nums;line-height:1}
+.precio span{color:var(--suave)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--oxido);color:#fff;text-decoration:none;font-weight:700;padding:.85rem 1.4rem;border-radius:999px;letter-spacing:.02em}
+.btn:hover,.btn:focus-visible{background:var(--vino);outline:3px solid var(--linea);outline-offset:2px}
+.tel{display:block;margin-top:.6rem;font-size:.9rem;color:var(--suave);user-select:all}
+section{padding-block:3.5rem}
+.sec-head{display:grid;gap:.4rem;margin-bottom:2rem;max-width:60ch}
+.sec-head h2{font-size:clamp(2rem,4vw,2.8rem)}
+.salsas{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.salsa{border:1.5px solid var(--oxido);border-radius:4px;padding:1.4rem;display:grid;gap:.7rem;align-content:start;min-width:0;background:var(--papel)}
+.salsa h3{font-size:1.6rem;color:var(--oxido)}
+.picor{display:flex;align-items:center;gap:.6rem;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.chiles{display:flex;gap:3px}
+.chiles svg{width:22px;height:22px}
+.chiles .on path{fill:var(--oxido)} .chiles .off path{fill:none;stroke:var(--linea);stroke-width:1.5}
+.salsa dl{margin:0;display:grid;gap:.5rem}
+.salsa dt{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--suave)}
+.salsa dd{margin:0}
+.aler{font-size:.82rem;color:var(--suave);border-top:1px dashed var(--linea);padding-top:.6rem}
+.proceso{background:var(--kraft)}
+.pasos{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;list-style:none;padding:0;margin:0;counter-reset:p}
+.pasos li{border:1.5px solid var(--oxido);padding:1rem .9rem;display:grid;gap:.35rem;align-content:start;counter-increment:p;min-width:0}
+.pasos li::before{content:counter(p);font-family:var(--serif);font-size:1.8rem;color:var(--oxido);line-height:1}
+.pasos b{font-family:var(--serif);font-size:1.25rem}
+.pasos span{font-size:.9rem;color:var(--suave)}
+.chef{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.chef blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.25;color:var(--tinta)}
+.chef blockquote footer{font-family:var(--sans);font-style:normal;font-size:.95rem;color:var(--oxido);margin-top:1rem;font-weight:700}
+.pedidos{background:var(--tinta);color:var(--papel)}
+.pedidos .kicker{color:var(--kraft)}
+.pedidos h2{color:var(--papel)}
+.reglas{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem 2rem;margin:0 0 2rem;padding:0;list-style:none}
+.reglas li{border-top:1px solid color-mix(in srgb,var(--papel) 25%,transparent);padding-top:.8rem;min-width:0}
+.reglas b{display:block;font-family:var(--serif);font-size:1.3rem}
+.pedidos .btn{background:var(--papel);color:var(--tinta)}
+.pedidos .tel{color:var(--kraft)}
+.aviso{padding-block:1.5rem;border-top:1px solid var(--linea)}
+.aviso summary{cursor:pointer;font-weight:700;color:var(--oxido);font-size:.95rem}
+.aviso summary:focus-visible{outline:3px solid var(--linea);outline-offset:3px}
+.aviso-texto{max-width:70ch;font-size:.88rem;color:var(--suave);display:grid;gap:.5rem;margin-top:.8rem}
+.aviso-texto p{margin:0}
+.correo{user-select:all}
+footer.pie{padding-block:2rem;font-size:.85rem;color:var(--suave);text-align:center}
+footer.pie a{color:var(--oxido)}
+.frasco{margin:-1.4rem -1.4rem .2rem;aspect-ratio:19/22;max-width:calc(100% + 2.8rem);overflow:hidden;border-bottom:1.5px solid var(--oxido);background:var(--kraft)}
+.frasco img{width:100%;height:100%;object-fit:cover;display:block;transform-origin:50% 60%}
+.galeria .fotos{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;gap:1rem}
+.fotos figure{margin:0;overflow:hidden;border-radius:4px;border:1px solid var(--linea);min-width:0;aspect-ratio:4/3;max-width:100%}
+.fotos .f1{grid-row:span 2;aspect-ratio:auto}
+.fotos img{width:100%;height:100%;object-fit:cover;display:block}
+.chef-foto{margin:0;overflow:hidden;border-radius:6px;border:1px solid var(--linea);aspect-ratio:4/3;max-width:100%}
+.chef-foto img{width:100%;height:100%;object-fit:cover;display:block}
+@media (prefers-reduced-motion:no-preference){
+  .fotos img,.chef-foto img{animation:respira 18s ease-in-out infinite alternate}
+  .fotos .f2 img{animation-delay:-6s}.fotos .f3 img,.chef-foto img{animation-delay:-12s}
+  .salsa{transition:transform .35s ease,box-shadow .35s ease}
+  .frasco img{transition:transform 1.2s ease}
+  .salsa:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px color-mix(in srgb,var(--tinta) 60%,transparent)}
+  .salsa:hover .frasco img{transform:scale(1.07) rotate(-1deg)}
+  .entra{animation:sube .8s ease both}
+}
+@keyframes respira{from{transform:scale(1) translate(0,0)}to{transform:scale(1.09) translate(-2%,-1.5%)}}
+@keyframes sube{from{transform:translateY(18px)}to{transform:none}}
+@media (max-width:820px){.galeria .fotos{grid-template-columns:1fr}.fotos .f1{grid-row:auto;aspect-ratio:4/3}.hero-media{max-height:none}}
+@media (max-width:820px){
+  .chef{grid-template-columns:1fr}
+  .salsas{grid-template-columns:1fr}
+  .pasos{grid-template-columns:repeat(2,1fr)}
+  .reglas{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){.btn{transition:background .2s}}
+</style>
+</head>
+<body>
+
+<div class="borrador"><div class="wrap">Vista previa para JR y la Chef Ady · todavía no está publicada en elsazondeadylet.com</div></div>
+
+<header class="hero">
+  <div class="hero-media">
+    <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" aria-label="Caja kraft de El Sazón de ADYLET abierta con los tres frascos entre viruta de madera">
+      <source src="hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-velo" aria-hidden="true"></div>
+  </div>
+  <div class="hero-texto">
+    <div class="wrap">
+      <span class="kicker">Salsas artesanales · Guadalajara, Jalisco</span>
+      <h1><small>El Sazón de</small>ADYLET</h1>
+      <span class="script">Hechas con amor</span>
+      <p>Tres salsas de chile en aceite de la Chef Ady. Las hace a mano y en lotes chicos, y las envasa, pesa y etiqueta una por una.</p>
+      <div class="precio"><b>$180</b><span>la caja con las 3 salsas de 85 g</span></div>
+      <a class="btn" href="https://wa.me/523310491482?text=Hola%20Chef%20Ady%2C%20quiero%20pedir%20una%20caja%20de%20salsas" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+      <span class="tel">WhatsApp 33 1049 1482</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">La caja trae las tres</span>
+      <h2>Tres recetas, tres niveles de picor</h2>
+      <p>Cada una se hace por separado y en su propio lote. Elige con cuál empezar.</p>
+    </div>
+    <div class="salsas">
+      <article class="salsa">
+        <div class="frasco"><img src="jar-morita.jpg" alt="Frasco de Chile Morita con Cacahuate de ADYLET" width="380" height="440" loading="lazy"></div>
+        <h3>Chile Morita con Cacahuate</h3>
+        <div class="picor"><span class="chiles" aria-hidden="true"><svg class="off" viewBox="0 0 24 24"><path d="M14 3c1 1 1 2 0 3 4 2 6 7 3 12-2 3-7 4-11 2 5-1 7-5 6-9-.5-2 0-5 2-8z"/></svg><svg class="off" viewBox="0 0 24 24"><path d="M14 3c1 1 1 2 0 3 4 2 6 7 3 12-2 3-7 4-11 2 5-1 7-5 6-9-.5-2 0-5 2-8z"/></svg><svg class="off" viewBox="0 0 24 24"><path d="M14 3c1 1 1 2 0 3 4 2 6 7 3 12-2 3-7 4-11 2 5-1 7-5 6-9-.5-2 0-5 2-8z"/></svg></span>No pica</div>
+        <dl>
+          <dt>Sabor</dt><dd>Ahumado y dulce. Para toda la mesa, también para quien no come picante.</dd>
+          <dt>Va con</dt><dd>Tacos de asada o al pastor, quesadillas, huevos, chicharrón, pizza y palomitas.</dd>
+          <dt>Para tomar</dt><dd>Cerveza oscura o mezcal.</dd>
+        </dl>
+        <p class="aler">Contiene cacahuate y ajonjolí.</p>
+      </article>
+      <article class="salsa">
+        <div class="frasco"><img src="jar-habanero.jpg" alt="Frasco de Chile Habanero con Cacao de ADYLET" width="380" height="440" loading="lazy"></div>
+        <h3>Chile Habanero con Cacao</h3>
+        <div class="picor"><span class="chiles" aria-hidden="true"><svg class="on" viewBox="0 0 24 24"><path d="M14 3c1 1 1 2 0 3 4 2 6 7 3 12-2 3-7 4-11 2 5-1 7-5 6-9-.5-2 0-5 2-8z"/></svg><svg class="on" viewBox="0 0 24 24"><path d="M14 3c1 1 1 2 0 3 4 2 6 7 3 12-2 3-7 4-11 2 5-1 7-5 6-9-.5-2 0-5 2-8z"/></svg><svg class="off" viewBox="0 0 24 24"><path d="M14 3c1 1 1 2 0 3 4 2 6 7 3 12-2 3-7 4-11 2 5-1 7-5 6-9-.5-2 0-5 2-8z"/></svg></span>Pica medio</div>
+        <dl>
+          <dt>Sabor</dt><dd>Picoso, con el final amargo y suave del cacao.</dd>
+          <dt>Va con</dt><dd>Cochinita, pescado y camarones, carnes a la parrilla, mango o piña con sal, y un toque sobre helado de vainilla.</dd>
+          <dt>Para tomar</dt><dd>Cerveza clara, mezcal o vino tinto joven.</dd>
+        </dl>
+        <p class="aler">Contiene ajonjolí.</p>
+      </article>
+      <article class="salsa">
+        <div class="frasco"><img src="jar-arbol.jpg" alt="Frasco de Chile de Árbol con Ajo de ADYLET" width="380" height="440" loading="lazy"></div>
+        <h3>Chile de Árbol con Ajo</h3>
+        <div class="picor"><span class="chiles" aria-hidden="true"><svg class="on" viewBox="0 0 24 24"><path d="M14 3c1 1 1 2 0 3 4 2 6 7 3 12-2 3-7 4-11 2 5-1 7-5 6-9-.5-2 0-5 2-8z"/></svg><svg class="on" viewBox="0 0 24 24"><path d="M14 3c1 1 1 2 0 3 4 2 6 7 3 12-2 3-7 4-11 2 5-1 7-5 6-9-.5-2 0-5 2-8z"/></svg><svg class="on" viewBox="0 0 24 24"><path d="M14 3c1 1 1 2 0 3 4 2 6 7 3 12-2 3-7 4-11 2 5-1 7-5 6-9-.5-2 0-5 2-8z"/></svg></span>Pica mucho</div>
+        <dl>
+          <dt>Sabor</dt><dd>Directo y con mucho ajo.</dd>
+          <dt>Va con</dt><dd>Tacos dorados, carnitas, caldos y sopas, pasta, totopos con aguacate y pan con aceite.</dd>
+          <dt>Para tomar</dt><dd>Cerveza clara o tequila.</dd>
+        </dl>
+        <p class="aler">Contiene ajonjolí.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="proceso">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Así se hacen</span>
+      <h2>Cinco pasos, todos a mano</h2>
+      <p>Nada de líneas de producción. Pocos frascos cada vez, porque así se hace en una cocina.</p>
+    </div>
+    <ol class="pasos">
+      <li><b>Selección</b><span>Los chiles se escogen uno a uno en el mercado.</span></li>
+      <li><b>Molido</b><span>En molino de mano, despacio, para que quede la textura.</span></li>
+      <li><b>Frito a baja temperatura</b><span>Sin comal: se fríe a fuego bajo para cuidar el sabor de cada chile.</span></li>
+      <li><b>Sazón</b><span>Se mueve, se prueba y se corrige.</span></li>
+      <li><b>Envasado</b><span>Frasco por frasco: se pesa, se tapa y se etiqueta a mano.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="galeria">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Así llega</span>
+      <h2>En su caja kraft, lista para regalar</h2>
+    </div>
+    <div class="fotos">
+      <figure class="f1"><img src="foto-caja.jpg" alt="Caja abierta con los tres frascos: Morita, Habanero y Cacao, y Árbol" width="1600" height="1200" loading="lazy"></figure>
+      <figure class="f2"><img src="foto-frascos.jpg" alt="Los tres frascos con tapa dorada entre viruta de madera" width="1600" height="1200" loading="lazy"></figure>
+      <figure class="f3"><img src="foto-habanero.jpg" alt="Frasco de Habanero y Cacao junto a la caja con los cinco pasos impresos y la frase Hechas con amor" width="1600" height="1200" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap chef">
+    <blockquote>«Quiero que las pruebes y te sientas como en casa.»<footer>Chef Ady · @chefady</footer></blockquote>
+    <figure class="chef-foto"><img src="foto-habanero.jpg" alt="Frasco de Habanero y Cacao junto a su caja" width="1600" height="1200" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="pedidos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Pedidos</span>
+      <h2>Pide tu caja por WhatsApp</h2>
+    </div>
+    <ul class="reglas">
+      <li><b>En Guadalajara</b>Te la mandamos por Uber Moto y el envío se le paga al repartidor.</li>
+      <li><b>Desde 50 cajas</b>Te las entregamos a domicilio.</li>
+      <li><b>Fuera de Guadalajara</b>Sí enviamos. El costo del envío lo cubre el cliente.</li>
+      <li><b>En tienda</b>Pronto habrá cajas en algunas tiendas. Pregúntanos cuál te queda más cerca.</li>
+    </ul>
+    <p style="margin:0 0 1.5rem"><b>Pago:</b> en efectivo o por transferencia. No emitimos factura.</p>
+    <a class="btn" href="https://wa.me/523310491482?text=Hola%20Chef%20Ady%2C%20quiero%20pedir%20una%20caja%20de%20salsas" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    <span class="tel">WhatsApp 33 1049 1482</span>
+  </div>
+</section>
+</main>
+
+<section class="aviso" id="aviso-privacidad">
+  <div class="wrap">
+    <details>
+      <summary>Aviso de privacidad</summary>
+      <div class="aviso-texto">
+        <p><b>Responsable:</b> Adriana Leticia García Ruiz Velasco (El Sazón de ADYLET), con domicilio en Miguel Galindo 1871, col. San Miguel de Mezquitán, C.P. 44260, Guadalajara, Jalisco.</p>
+        <p><b>Qué datos usamos:</b> tu nombre, tu número de WhatsApp y la dirección de entrega que nos das al hacer un pedido.</p>
+        <p><b>Para qué:</b> tomar y entregar tu pedido, confirmar el pago y avisarte de tu entrega. No los usamos para nada más, no los vendemos y solo los compartimos con el repartidor que lleva tu caja.</p>
+        <p><b>Tus derechos:</b> puedes pedir ver, corregir o borrar tus datos, o dejar de recibir mensajes, escribiendo a <span class="correo">adylet42@hotmail.com</span>. Te contestamos en un máximo de 20 días hábiles.</p>
+        <p><b>Cambios:</b> si este aviso cambia, lo publicaremos en esta misma página. Última actualización: noviembre de 2026.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="wrap">El Sazón de ADYLET® · Salsas artesanales · Guadalajara, Jalisco, México · <a href="#aviso-privacidad">Aviso de privacidad</a><br>
+  <a href="https://www.tiktok.com/@chefady" target="_blank" rel="noopener">TikTok @chefady</a> · <a href="https://www.instagram.com/chefadygar" target="_blank" rel="noopener">Instagram @chefadygar</a></div>
+</footer>
+<script>
+(function(){
+  var v=document.getElementById('hero-video');
+  if(v){var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){});}
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.target===v){e.isIntersecting?v.play().catch(function(){}):v.pause();return;}
+    if(e.isIntersecting){e.target.classList.add('entra');io.unobserve(e.target);}
+  });},{threshold:.15});
+  document.querySelectorAll('.salsa,.pasos li,.fotos figure').forEach(function(el){io.observe(el)});
+  if(v)io.observe(v);
+})();
+</script>
+
+</body>
+</html>
